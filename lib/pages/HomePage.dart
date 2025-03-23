@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ig_clone/widgets/Navbar.dart';
+import 'package:ig_clone/pages/Navbar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,7 +14,6 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(onPressed: () {
-            
           }, icon: Icon(Icons.heart_broken_outlined)),
           IconButton(onPressed: (){}, icon: Icon(Icons.chat_bubble_outline))
         ],

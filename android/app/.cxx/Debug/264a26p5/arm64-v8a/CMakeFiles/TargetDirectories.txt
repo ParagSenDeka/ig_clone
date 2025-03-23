@@ -1,0 +1,2 @@
+C:/Users/patri/OneDrive/Documents/Capstone/ig_clone/android/app/.cxx/Debug/264a26p5/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/patri/OneDrive/Documents/Capstone/ig_clone/android/app/.cxx/Debug/264a26p5/arm64-v8a/CMakeFiles/rebuild_cache.dir
