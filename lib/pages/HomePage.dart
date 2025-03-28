@@ -154,14 +154,33 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  Container(
-                    height: 450,
-                    width: double.infinity,
-                    decoration: const BoxDecoration(color: Colors.grey),
-                    child: Image(
-                        image: AssetImage(
-                      'assets/Post.png',
-                    )),
+                  Stack(children: [
+                    Container(
+                      height: 450,
+                      width: double.infinity,
+                      decoration: BoxDecoration(color: Colors.grey,borderRadius: BorderRadius.circular(20)),
+                      child: Image(
+                          image: AssetImage(
+                        'assets/Post.png',
+                      )),
+                    ),
+                    Positioned(
+                        left: 8,
+                        bottom: 8,
+                        child: CircleAvatar(
+                            radius: 17,
+                            backgroundColor: Colors.white54,
+                            child: IconButton(
+                                onPressed: () {}, icon: Icon(Icons.person,size: 20,)))),
+                    Positioned(
+                        right: 8,
+                        bottom: 8,
+                        child: CircleAvatar(
+                            radius: 16,
+                            backgroundColor: Colors.white54,
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(Icons.volume_up_rounded,size: 20,)))),]
                   ),
                   const SizedBox(height: 5),
                   Row(
@@ -190,12 +209,41 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Like by ABCD and XYZ and others',
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          "User's caption..... more ",
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w500),
+                        ),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        Text(
+                          'Time 00 day ago ..',
+                          style: TextStyle(
+                              fontSize: 10, fontWeight: FontWeight.w400),
+                        ),
+                      ],
+                    ),
+                  ),
                   const Padding(
                     padding: EdgeInsets.only(left: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10),
+                        SizedBox(height: 12),
                         Padding(
                           padding: EdgeInsets.only(right: 10),
                           child: Row(
