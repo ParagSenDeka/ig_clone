@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ig_clone/widgets/ApplicationWidget.dart';
 
 class Massagepage extends StatefulWidget {
   const Massagepage({super.key});
