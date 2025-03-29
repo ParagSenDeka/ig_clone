@@ -26,6 +26,7 @@ class _NavbarState extends State<Navbar> {
         setState(() {
           currentIndex = value;
         });
+        print(currentIndex);
       },
       selectedIndex: currentIndex,
     );
