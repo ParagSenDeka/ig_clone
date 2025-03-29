@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import "../widgets/NavigationDestinationWidget.dart";
+import "NavigationDestinationWidget.dart";
 
 class Navbar extends StatefulWidget {
   const Navbar({super.key});

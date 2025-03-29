@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ig_clone/pages/MassagePage.dart';
-import 'package:ig_clone/pages/Navbar.dart';
+import 'package:ig_clone/widgets/Navbar.dart';
 import 'package:ig_clone/pages/NotificationPages.dart';
 import 'package:ig_clone/widgets/ApplicationWidget.dart';
 
