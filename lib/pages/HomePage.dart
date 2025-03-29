@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:ig_clone/pages/MassagePage.dart';
 import 'package:ig_clone/pages/Navbar.dart';
+import 'package:ig_clone/pages/NotificationPages.dart';
+import 'package:ig_clone/widgets/ApplicationWidget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,12 +13,31 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Instagram",
-          style: GoogleFonts.lato(),
+          style: AppWidget.AppBarTextStyle(),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_border)),
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.chat_bubble_outline)),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Notificationpages()));
+              },
+              icon: const Icon(Icons.favorite_border)),
+          Padding(
+            padding: const EdgeInsets.only(right: 10, left: 7),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Massagepage()));
+              },
+              child: SizedBox(
+                width: 30,
+                height: 30,
+                child: Image.asset('assets/Images/chat.png'),
+              ),
+            ),
+          ),
         ],
       ),
       body: Padding(
@@ -26,14 +47,14 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 100, // Increased height for better spacing
+                height: 100,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  reverse: true, // Enables right-to-left scrolling
-                  itemCount: 10, // Number of story items
+                  reverse: true,
+                  itemCount: 10,
                   itemBuilder: (context, index) {
                     bool isUserStory =
-                        index == 9; // Last item is the user's story
+                        index == 9;
                     return Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Column(
@@ -113,7 +134,7 @@ class HomePage extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppWidget.spaceBtwItemsMd - 2),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -125,19 +146,17 @@ class HomePage extends StatelessWidget {
                           const CircleAvatar(
                             child: Icon(Icons.person),
                           ),
-                          const SizedBox(width: 16),
+                          const SizedBox(width: AppWidget.spaceBtwItems),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'User Name and ABED',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                style: AppWidget.SmallXMDTextStyle(),
                               ),
                               Text(
                                 "User's Location",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 12),
+                                style: AppWidget.SmallXTextStyle(),
                               )
                             ],
                           ),
@@ -153,12 +172,14 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppWidget.spaceBtwItems - 2),
                   Stack(children: [
                     Container(
                       height: 450,
                       width: double.infinity,
-                      decoration: BoxDecoration(color: Colors.grey,borderRadius: BorderRadius.circular(20)),
+                      decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(20)),
                       child: Image(
                           image: AssetImage(
                         'assets/Post.png',
@@ -171,7 +192,11 @@ class HomePage extends StatelessWidget {
                             radius: 17,
                             backgroundColor: Colors.white54,
                             child: IconButton(
-                                onPressed: () {}, icon: Icon(Icons.person,size: 20,)))),
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.person,
+                                  size: 20,
+                                )))),
                     Positioned(
                         right: 8,
                         bottom: 8,
@@ -180,9 +205,12 @@ class HomePage extends StatelessWidget {
                             backgroundColor: Colors.white54,
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.volume_up_rounded,size: 20,)))),]
-                  ),
-                  const SizedBox(height: 5),
+                                icon: Icon(
+                                  Icons.volume_up_rounded,
+                                  size: 20,
+                                )))),
+                  ]),
+                  const SizedBox(height: AppWidget.spaceBtwItemsSm - 1),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -191,10 +219,11 @@ class HomePage extends StatelessWidget {
                           IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.favorite_border_outlined)),
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                  Icons.chat_bubble_outline_rounded)),
+                          SizedBox(
+                            width: 32,
+                            height: 32,
+                            child: Image.asset('assets/Images/chat.png'),
+                          ),
                           IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.send_rounded)),
@@ -203,8 +232,14 @@ class HomePage extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.save)),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: SizedBox(
+                              width: 30,
+                              height: 30,
+                              child: Image.asset('assets/Images/bookmark.png'),
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -216,47 +251,38 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           'Like by ABCD and XYZ and others',
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w600),
+                          style: AppWidget.SmallXMDTextStyle(),
                         ),
                         SizedBox(
                           height: 4,
                         ),
-                        Text(
-                          "User's caption..... more ",
-                          style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w500),
-                        ),
+                        Text("User's caption........... more ",
+                            style: AppWidget.SmallXTextStyle()),
                         SizedBox(
                           height: 3,
                         ),
-                        Text(
-                          'Time 00 day ago ..',
-                          style: TextStyle(
-                              fontSize: 10, fontWeight: FontWeight.w400),
-                        ),
+                        Text('Time 00 day ago .....',
+                            style: AppWidget.SmallXTextStyle()),
                       ],
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(left: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 12),
+                        SizedBox(height: AppWidget.spaceBtwItems),
                         Padding(
                           padding: EdgeInsets.only(right: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Suggested for you",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold)),
+                              Text(
+                                'Suggested for you',
+                                style: AppWidget.MediamMdTextStyle(),
+                              ),
                               Text('See all',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold)),
+                                  style: AppWidget.SmallXTextStyle()),
                             ],
                           ),
                         ),
@@ -265,7 +291,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 170,
+                    height: 220,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       reverse: true,
@@ -276,19 +302,19 @@ class HomePage extends StatelessWidget {
                           child: Stack(
                             children: [
                               Container(
-                                height: 160,
-                                width: 130,
+                                height: 200,
+                                width: 150,
                                 decoration: BoxDecoration(
                                   color: Colors.grey[300],
-                                  border: Border.all(
-                                      color: Colors.black, width: 1.2),
-                                  borderRadius: BorderRadius.circular(20),
+                                  border:
+                                      Border.all(color: Colors.black, width: 1),
+                                  borderRadius: BorderRadius.circular(17),
                                 ),
                                 child: Center(
                                   child: Padding(
                                     padding: const EdgeInsets.only(
                                         top: 25,
-                                        bottom: 20,
+                                        bottom: 10,
                                         right: 10,
                                         left: 10),
                                     child: Column(
@@ -296,19 +322,41 @@ class HomePage extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: [
                                         const CircleAvatar(
-                                          radius: 25,
-                                          backgroundImage:
-                                              AssetImage('assets/user.png'),
+                                          radius: 20,
+                                          backgroundImage: AssetImage(
+                                            'assets/user.png',
+                                          ),
                                         ),
-                                        const SizedBox(height: 5),
-                                        const Text('User Name',
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold)),
-                                        const SizedBox(height: 5),
-                                        const Text('Followed by ABCD,\n XYZA',
+                                        const SizedBox(
+                                            height:
+                                                AppWidget.spaceBtwItemsSm - 1),
+                                        Text('User Name',
+                                            style:
+                                                AppWidget.MediamMdTextStyle()),
+                                        SizedBox(
+                                            height:
+                                                AppWidget.spaceBtwItemsSm - 1),
+                                        Text('Followed by ABED,\n XYZ',
                                             textAlign: TextAlign.center,
-                                            style: TextStyle(fontSize: 10)),
+                                            style: AppWidget.SmallXTextStyle()),
+                                        SizedBox(
+                                          height: AppWidget.spaceBtwItemsSm - 2,
+                                        ),
+                                        ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              elevation: 4,
+                                              backgroundColor: Colors.blue,
+                                            ),
+                                            onPressed: () {},
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 15, left: 15),
+                                              child: Text(
+                                                'Follow',
+                                                style: AppWidget
+                                                    .MediamMdTextStyle(),
+                                              ),
+                                            ))
                                       ],
                                     ),
                                   ),
