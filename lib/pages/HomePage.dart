@@ -279,7 +279,7 @@ class HomePage extends StatelessWidget {
                             children: [
                               Text(
                                 'Suggested for you',
-                                style: AppWidget.MediamMdTextStyle(),
+                                style: AppWidget.MediamMdTextStyle(color: Colors.black),
                               ),
                               Text('See all',
                                   style: AppWidget.SmallXTextStyle()),
@@ -332,7 +332,7 @@ class HomePage extends StatelessWidget {
                                                 AppWidget.spaceBtwItemsSm - 1),
                                         Text('User Name',
                                             style:
-                                                AppWidget.MediamMdTextStyle()),
+                                                AppWidget.MediamMdTextStyle(color: Colors.black)),
                                         SizedBox(
                                             height:
                                                 AppWidget.spaceBtwItemsSm - 1),
@@ -354,7 +354,7 @@ class HomePage extends StatelessWidget {
                                               child: Text(
                                                 'Follow',
                                                 style: AppWidget
-                                                    .MediamMdTextStyle(),
+                                                    .MediamMdTextStyle(color: Colors.white,),
                                               ),
                                             ))
                                       ],

@@ -34,7 +34,7 @@ class AppWidget {
         fontFamily: 'Delius');
   }
 
-  static TextStyle MediamMdTextStyle() {
+  static TextStyle MediamMdTextStyle({required Color color}) {
     return const TextStyle(
         fontSize: 16,
         color: Colors.black,
