@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:ig_clone/data/notifiers.dart";
 import "package:ig_clone/widgets/Navbar.dart";
 import 'pages/HomePage.dart';
 import "package:ig_clone/pages/ProfilePage.dart";
@@ -15,8 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int currentIndex = 0;
-    final List<Widget> list = [
+    final List<Widget> listPage = [
       HomePage(),
       Searchpage(),
       Uploadpage(),
@@ -31,7 +31,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        body: HomePage(),
+        body: ValueListenableBuilder(
+          valueListenable: selectedPageValue,
+          builder: (context, value, child) {
+            return listPage.elementAt(selectedPageValue.value);
+          },
+        ),
         bottomNavigationBar: Navbar(),
       ),
     );
