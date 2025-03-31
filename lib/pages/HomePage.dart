@@ -28,8 +28,10 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.only(right: 10, left: 7),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Massagepage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Massagepage()));
               },
               child: SizedBox(
                 width: 30,
@@ -53,8 +55,7 @@ class HomePage extends StatelessWidget {
                   reverse: true,
                   itemCount: 10,
                   itemBuilder: (context, index) {
-                    bool isUserStory =
-                        index == 9;
+                    bool isUserStory = index == 9;
                     return Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Column(
@@ -279,7 +280,8 @@ class HomePage extends StatelessWidget {
                             children: [
                               Text(
                                 'Suggested for you',
-                                style: AppWidget.MediamMdTextStyle(color: Colors.black),
+                                style: AppWidget.MediamMdTextStyle(
+                                    color: Colors.black),
                               ),
                               Text('See all',
                                   style: AppWidget.SmallXTextStyle()),
@@ -331,8 +333,8 @@ class HomePage extends StatelessWidget {
                                             height:
                                                 AppWidget.spaceBtwItemsSm - 1),
                                         Text('User Name',
-                                            style:
-                                                AppWidget.MediamMdTextStyle(color: Colors.black)),
+                                            style: AppWidget.MediamMdTextStyle(
+                                                color: Colors.black)),
                                         SizedBox(
                                             height:
                                                 AppWidget.spaceBtwItemsSm - 1),
@@ -353,8 +355,10 @@ class HomePage extends StatelessWidget {
                                                   right: 15, left: 15),
                                               child: Text(
                                                 'Follow',
-                                                style: AppWidget
-                                                    .MediamMdTextStyle(color: Colors.white,),
+                                                style:
+                                                    AppWidget.MediamMdTextStyle(
+                                                  color: Colors.white,
+                                                ),
                                               ),
                                             ))
                                       ],
@@ -383,7 +387,6 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const Navbar(),
     );
   }
 }

@@ -1,5 +1,5 @@
+import "package:flutter/foundation.dart";
 import "package:flutter/material.dart";
-
 import "NavigationDestinationWidget.dart";
 
 class Navbar extends StatefulWidget {
@@ -10,6 +10,7 @@ class Navbar extends StatefulWidget {
 
 class _NavbarState extends State<Navbar> {
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return NavigationBar(
@@ -21,14 +22,13 @@ class _NavbarState extends State<Navbar> {
         Navigationdestinationwidget(icon: Icon(Icons.play_circle), label: ""),
         Navigationdestinationwidget(icon: Icon(Icons.person), label: ""),
       ],
-      //setting state for navigation bars
       onDestinationSelected: (value) {
         setState(() {
-          currentIndex = value;
+          currentIndex = value; // Remove .value
         });
         print(currentIndex);
       },
-      selectedIndex: currentIndex,
+      selectedIndex: currentIndex, // Remove .value
     );
   }
 }
