@@ -24,11 +24,11 @@ class _NavbarState extends State<Navbar> {
       ],
       onDestinationSelected: (value) {
         setState(() {
-          currentIndex = value; // Remove .value
+          currentIndex = value;
         });
         print(currentIndex);
       },
-      selectedIndex: currentIndex, // Remove .value
+      selectedIndex: currentIndex,
     );
   }
 }
