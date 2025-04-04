@@ -44,23 +44,26 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Storiessection(),
-              const SizedBox(height: AppWidget.spaceBtwItemsMd - 2),
-              Column(
-                children: [
-                  Postsection(),
-                ],
-              ),
-              Suggestsection(),
-            ],
+      body: PageView(
+        scrollDirection: Axis.horizontal,
+        children:[ Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Storiessection(),
+                const SizedBox(height: AppWidget.spaceBtwItemsMd - 2),
+                Column(
+                  children: [
+                    Postsection(),
+                  ],
+                ),
+                Suggestsection(),
+              ],
+            ),
           ),
-        ),
+        ),]
       ),
     );
   }
