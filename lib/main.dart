@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import "package:ig_clone/data/notifiers.dart";
-import "package:ig_clone/pages/SplashScreen.dart";
 import "package:ig_clone/widgets/Navbar.dart";
 import 'pages/HomePage.dart';
 import "package:ig_clone/pages/ProfilePage.dart";

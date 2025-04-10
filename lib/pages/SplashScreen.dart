@@ -46,7 +46,7 @@ class _SplashscreenState extends State<Splashscreen> {
             left: 0,
             right: 0,
             child: Text(
-              'By\nKuldeep & Parag',
+              'By\nKuldeep',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
