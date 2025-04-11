@@ -1,10 +1,10 @@
+import 'package:dotenv/dotenv.dart';
 import 'package:supabase/supabase.dart';
 
 Future<void> login() async {
-  final supabase = SupabaseClient(
-    'your url',
-    'your key',
-  );
+  var env = DotEnv(includePlatformEnvironment: true)..load(['../../.env']);
+  final supabase =
+      SupabaseClient(env["SUPABASE_URL"]!, env["SUPABASE_API_KEY"]!);
 
   final email = 'abc@gmail.com';
   final password = 'abc123';
