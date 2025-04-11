@@ -26,7 +26,7 @@ class AppWidget {
         fontFamily: 'Delius');
   }
 
-  static TextStyle MediamTextStyle() {
+  static TextStyle MediamTextStyle({required Color color } ) {
     return const TextStyle(
         fontSize: 18,
         color: Colors.black,

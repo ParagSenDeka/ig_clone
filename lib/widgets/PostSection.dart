@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ig_clone/pages/ProfilePage.dart';
 
 import 'ApplicationWidget.dart';
 
@@ -15,8 +16,14 @@ class Postsection extends StatelessWidget {
           children: [
             Row(
               children: [
-                const CircleAvatar(
-                  child: Icon(Icons.person),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Profilepage()));
+                  },
+                  child: const CircleAvatar(
+                    child: Icon(Icons.person),
+                  ),
                 ),
                 const SizedBox(width: AppWidget.spaceBtwItems),
                 Column(
@@ -256,7 +263,10 @@ class Postsection extends StatelessWidget {
                             Icons.report_gmailerrorred,
                             color: Colors.red,
                           )),
-                      title: Text('Report',style: TextStyle(color: Colors.red),),
+                      title: Text(
+                        'Report',
+                        style: TextStyle(color: Colors.red),
+                      ),
                     ),
                   ])
                 ],

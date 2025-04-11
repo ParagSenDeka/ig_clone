@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import '../widgets/ApplicationWidget.dart';
+
 class Searchpage extends StatefulWidget {
   const Searchpage({super.key});
 
@@ -15,20 +17,23 @@ class _SearchpageState extends State<Searchpage> {
       appBar: AppBar(
         backgroundColor: Colors.grey[100],
         elevation: 0,
-        title: Container(
+        title:  Container(
           height: 40,
+          width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.grey[600],
-            borderRadius: BorderRadius.circular(12),
+            color: Colors.grey[300],
+            borderRadius: BorderRadius.circular(15),
           ),
-          child: const TextField(
-            style: TextStyle(color: Colors.white),
-            decoration: InputDecoration(
-              hintText: 'Search...',
-              hintStyle: TextStyle(color: Colors.white70),
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.symmetric(horizontal: 16),
-            ),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Row(
+            children: [
+              const Icon(Icons.search),
+              const SizedBox(width: 10),
+              Text(
+                'Search....',
+                style: AppWidget.SmallXMDTextStyle(),
+              ),
+            ],
           ),
         ),
       ),
